@@ -1,0 +1,9 @@
+<p id="message-<%= message.id %>">
+  <%= message.content %>
+  <!-- ********** 以下を追加 ********** -->
+  <%= link_to '更新', edit_message_path(message), data: { remote: true } %>
+  <!-- ********** 以上を追加 ********** -->
+  <%= link_to '削除', message_path(message),
+              method: :delete,
+              data: { confirm: '削除しますか?', remote: true } %>
+</p>

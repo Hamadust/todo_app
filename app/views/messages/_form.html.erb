@@ -1,0 +1,9 @@
+<%= form_with model: message, local: false do |f| %>
+  <%= f.text_field :content %>
+  <%= f.submit value %>
+<!-- ********** 以下を追加 ********** -->
+  <% if value == '更新' %>
+    <%= link_to '取消', new_message_path, data: { remote: true } %>
+  <% end %>
+<!-- ********** 以上を追加 ********** -->
+<% end %>

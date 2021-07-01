@@ -1,0 +1,5 @@
+// フォームは一つしか無いので， id を使わず，タグ名から要素を取得
+// ここの変数宣言に let や const を使用すると２回目にエラーが発生します
+var form = document.getElementsByTagName('form')[0]
+// フォームを更新用フォームに置き換えます。ボタンの文字は「更新」にします。
+form.outerHTML = '<%= j(render 'form', message: @message, value: '更新') %>'

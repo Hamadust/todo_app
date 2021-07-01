@@ -1,0 +1,5 @@
+// 対応するメッセージを更新
+document.getElementById('message-<%= @message.id %>').innerHTML = '<%= j(render @message) %>'
+// フォームを新規投稿フォームに戻す
+var form = document.getElementsByTagName('form')[0]
+form.outerHTML = '<%= j(render 'form', message: Message.new, value: '投稿') %>'

@@ -1,0 +1,6 @@
+<!-- 新規投稿メッセージなので，ボタンの文字は「投稿」とする -->
+<%= render 'form', message: Message.new, value: '投稿' %>
+<hr>
+<div id="messages">
+  <%= render @messages %>
+</div>
