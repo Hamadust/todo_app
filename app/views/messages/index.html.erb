@@ -1,6 +1,12 @@
-<!-- 新規投稿メッセージなので，ボタンの文字は「投稿」とする -->
-<%= render 'form', message: Message.new, value: '投稿' %>
-<hr>
+<!-- モーダルのトリガーボタン -->
+<%= link_to 'NEW TASK CREATE',
+              new_message_path,
+              data: { remote: true },
+              class: "btn btn-primary",
+              id: :modalButton %>
+
+<%= render 'modal' %>
+
 <div id="messages">
   <%= render @messages %>
 </div>

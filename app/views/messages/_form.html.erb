@@ -1,6 +1,11 @@
 <%= form_with model: message, local: false do |f| %>
-  <%= f.text_field :content %>
-  <%= f.submit value %>
+  <%= f.text_field :content, autocomplete: 'off' %>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <%= f.submit value, class: "btn btn-primary", id: "submitButton" %>
+  </div>
+
 <!-- ********** 以下を追加 ********** -->
   <% if value == '更新' %>
     <%= link_to '取消', new_message_path, data: { remote: true } %>

@@ -1,2 +1,23 @@
+
+
+// モーダルを開く ==================================================================
+// 「NEW TASK CREATE」ボタンを取得
+var modalButton = document.getElementById('modalButton');
+
+// モーダルを新規に作成
+var exampleModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
+    keyboard: false
+})
+
+// モーダルを開く
+modalButton.addEventListener('click', function () {
+    exampleModal.toggle();
+    console.log('[new_message_path Modal Open]')
+})
+// ==============================================================================
+
+
+// モーダル内のフォームを取得
 var form = document.getElementsByTagName('form')[0]
+// フォームのレンダリング
 form.outerHTML = '<%= j(render 'form', message: Message.new, value: '投稿') %>'
