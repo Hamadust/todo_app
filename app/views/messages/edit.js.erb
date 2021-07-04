@@ -3,3 +3,20 @@
 var form = document.getElementsByTagName('form')[0]
 // フォームを更新用フォームに置き換えます。ボタンの文字は「更新」にします。
 form.outerHTML = '<%= j(render 'form', message: @message, value: '更新') %>'
+
+
+// モーダルを開く ==================================================================
+// 「Edit」ボタンを取得
+var modalButton = document.getElementById('editButton-<%= @message.id %>');
+
+// モーダルを新規に作成
+var exampleModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
+    keyboard: false
+})
+
+// モーダルを開く
+modalButton.addEventListener('click', function () {
+    exampleModal.toggle();
+    console.log('[new_message_path Modal Open]')
+})
+// ==============================================================================

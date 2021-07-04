@@ -3,3 +3,23 @@ document.getElementById('message-<%= @message.id %>').innerHTML = '<%= j(render 
 // フォームを新規投稿フォームに戻す
 var form = document.getElementsByTagName('form')[0]
 form.outerHTML = '<%= j(render 'form', message: Message.new, value: '投稿') %>'
+
+// モーダルを閉じる動作 ========================================
+
+// モーダルを取得
+var modal = document.getElementById('exampleModal')
+// モーダルを表示させているクラスを削除
+modal.classList.remove('fade')
+modal.classList.remove('show')
+// モーダルのdisplayを'none'にする
+modal.style.display = 'none'
+
+// 背景の透過した黒いレイヤーを取得・削除
+var backdrop = document.getElementsByClassName('modal-backdrop')[0]
+backdrop.remove()
+
+// bodyタグの'modal-open'クラスを削除
+var body = document.getElementsByTagName('body')[0]
+body.classList.remove('modal-open')
+
+// =========================================================
