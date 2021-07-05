@@ -1,8 +1,9 @@
-// 対応するメッセージを更新
-document.getElementById('message-<%= @message.id %>').innerHTML = '<%= j(render @message) %>'
-// フォームを新規投稿フォームに戻す
-var form = document.getElementsByTagName('form')[0]
-form.outerHTML = '<%= j(render 'form', message: Message.new, value: '投稿') %>'
+// メッセージ一覧の一番下に新規メッセージを追加する
+document.getElementById('tasks').insertAdjacentHTML('beforeend', '<%= j(render @task) %>')
+// フォームのインプットを空にする
+document.getElementById('task_content').value = ''
+
+console.log('[POST]')
 
 // モーダルを閉じる動作 ========================================
 
@@ -23,3 +24,5 @@ var body = document.getElementsByTagName('body')[0]
 body.classList.remove('modal-open')
 
 // =========================================================
+
+console.log('[TASK CREATE Modal Close]')

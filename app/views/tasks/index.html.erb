@@ -1,7 +1,7 @@
 <!-- モーダルのトリガーボタン -->
 <div class="col-md-2 offset-md-5">
   <%= link_to 'NEW TASK CREATE',
-                new_message_path,
+                new_task_path,
                 data: { remote: true },
                 class: "btn btn-primary",
                 id: "modalButton" %>
@@ -9,6 +9,6 @@
 
 <%= render 'modal' %>
 
-<div id="messages">
-  <%= render @messages %>
+<div id="tasks">
+  <%= render @tasks %>
 </div>
