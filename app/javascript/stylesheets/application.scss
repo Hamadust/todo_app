@@ -1,1 +1,25 @@
 @import "bootstrap";
+
+li {
+    list-style-type: none;
+}
+
+a, a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+#logo {
+  color: white;
+  font-size: large;
+}
+
+#modalButton {
+  width: 180px;
+  display: block;
+  text-align: center;
+}
+
+.container {
+  width: 1080px;
+}

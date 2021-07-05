@@ -3,7 +3,7 @@
 <%# bootstrap5を使用した記述としたい %>
 <%# 現在bootstrap3を使用した記述となっている %>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3"> <!-- ←　この部分をbootstrap5に準拠した記述に直す必要がある -->
+  <div class="col-md-6 offset-md-3"> <!-- col-md-offset-3 → offset-md-3 -->
     <%= form_with(model: @user, local: true) do |f| %>
       <%#= render 'shared/error_messages' %>
 

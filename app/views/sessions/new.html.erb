@@ -3,7 +3,7 @@
 
 <%# bootstrap5に準拠した記述に直す %>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 offset-md-3"> <!-- col-md-offset-3 → offset-md-3 -->
     <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
 
       <%= f.label :email %>
