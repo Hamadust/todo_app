@@ -25,6 +25,7 @@ class TasksController < ApplicationController
 
   def update
     @task.update!(task_params)
+    redirect_to root_url
   end
 
   # ステータスボタンが押下された場合にステータスを変更する処理;

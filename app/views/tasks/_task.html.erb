@@ -11,18 +11,18 @@
   <!-- タスク内容 -->
   <p id="content-<%= task.id %>"><%= task.content %></p>
 
-
   <!-- 編集・削除 -->
   <!-- モーダルのトリガーボタン -->
   <%= link_to '編集',
                 edit_task_path(task),
                 data: { remote: true },
                 class: "btn btn-primary",
-                id: "editButton-#{task.id}" %>
+                id: "editButton-#{task.id}",
+                "data-bs-toggle" => "modal",
+                "data-bs-target" => "#exampleModal" %>
 
   <%= link_to '削除', task_path(task),
               method: :delete,
               data: { confirm: '削除しますか?', remote: true },
               class: "btn btn-secondary" %>
-
 </div>
