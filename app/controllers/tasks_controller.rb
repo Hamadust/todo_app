@@ -1,9 +1,10 @@
 class TasksController < ApplicationController
   # idからメッセージを取り出す操作は他でも必要となるので最初からまとめておきます
   before_action :set_task, only: %i[destroy edit update change]
+  before_action :logged_in_user, only: %i[create edit destroy]
 
   def index
-    @tasks = Task.all
+    @tasks = Task.where(user_id: current_user.id)
   end
 
   # 新規投稿用のフォームに置き換えることだけに使用する
