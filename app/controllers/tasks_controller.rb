@@ -26,7 +26,7 @@ class TasksController < ApplicationController
     @task.update!(task_params)
   end
 
-  # ステータスボタンが押下された場合にステータスを変更する処理
+  # ステータスボタンが押下された場合にステータスを変更する処理;
   def change
     state = @task.state
     if state == 'TODO'

@@ -1,34 +1,27 @@
 <%= form_with model: task, local: false do |f| %>
-<!-- ステータス -->
-<div class="form-group row">
-    <%= f.label :state, "State : ", class: "col-xl-5" %>
-  <div class="col-xl-7">
-    <%= button_tag 'TODO', type: 'button', class: "btn btn-primary form-control", id: "state_btn" %>
-    <%= f.hidden_field :state, value: "TODO" %>
+  <!-- ステータス -->
+  <div class="form-group row">
+      <%= f.label :state, "State : ", class: "col-xl-5" %>
+    <div class="col-xl-7">
+      <%= button_tag 'TODO', type: 'button', class: "btn btn-primary form-control", id: "state_btn" %>
+      <%= f.hidden_field :state, value: "TODO" %>
+    </div>
   </div>
-</div>
 
-<!-- デッドライン -->
-
- <div class="form-group row">
+  <!-- デッドライン -->
+  <div class="form-group row">
     <%= f.label :limit, "Limit : ", class: "col-sm-4" %>
     <%= f.date_field :limit, class: "col-sm-8 form-control", value: Date.current.strftime() %>
   </div>
 
-<!-- コンテンツ -->
-<div class="form-group row">
-  <%= f.label :content, "Task :" %>
-  <%= f.text_field :content, autocomplete: 'off' %>
-</div>
+  <!-- コンテンツ -->
+  <div class="form-group row">
+    <%= f.label :content, "Task :" %>
+    <%= f.text_field :content, autocomplete: 'off' %>
+  </div>
 
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
     <%= f.submit value, class: "btn btn-primary", id: "submitButton" %>
   </div>
-
-<!-- ********** 以下を追加 ********** -->
-  <% if value == '更新' %>
-    <%= link_to '取消', new_task_path, data: { remote: true } %>
-  <% end %>
-<!-- ********** 以上を追加 ********** -->
 <% end %>

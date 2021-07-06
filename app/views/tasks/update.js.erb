@@ -2,7 +2,7 @@
 document.getElementById('task-<%= @task.id %>').innerHTML = '<%= j(render @task) %>'
 // フォームを新規投稿フォームに戻す
 var form = document.getElementsByTagName('form')[0]
-form.outerHTML = '<%= j(render 'form', task: Message.new, value: '投稿') %>'
+form.outerHTML = '<%= j(render 'form', task: Task.new, value: '投稿') %>'
 
 // モーダルを閉じる動作 ========================================
 
