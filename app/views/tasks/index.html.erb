@@ -4,7 +4,9 @@
                 new_task_path,
                 data: { remote: true },
                 class: "btn btn-primary",
-                id: "modalButton" %>
+                id: "modalButton",
+                "data-bs-toggle" => "modal",
+                "data-bs-target" => "#exampleModal" %>
 </div>
 
 <%= render 'modal' %>
