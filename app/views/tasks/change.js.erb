@@ -1,0 +1,2 @@
+document.getElementById('state_btn-<%= @task.id %>').innerHTML = '<%= j(@task.state) %>'
+console.log('[state-change <%= @task.state %>]')

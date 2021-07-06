@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   # idからメッセージを取り出す操作は他でも必要となるので最初からまとめておきます
-  before_action :set_task, only: %i[destroy edit update]
+  before_action :set_task, only: %i[destroy edit update change]
 
   def index
     @tasks = Task.all
@@ -24,6 +24,19 @@ class TasksController < ApplicationController
 
   def update
     @task.update!(task_params)
+  end
+
+  # ステータスボタンが押下された場合にステータスを変更する処理
+  def change
+    state = @task.state
+    if state == 'TODO'
+      state = 'DOING'
+    elsif state == 'DOING'
+      state = 'DONE'
+    elsif state == 'DONE'
+      state = 'TODO'
+    end
+    @task.update_attribute(:state, state)
   end
 
   private

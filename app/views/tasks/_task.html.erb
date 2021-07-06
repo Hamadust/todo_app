@@ -1,9 +1,19 @@
-<div class="col-md-11 offset-md-1">
-  <p id="task-<%= task.id %>" class="content">
-    <%= task.state %>
-    <%= task.limit %>
-    <%= task.content %>
-    <!-- モーダルのトリガーボタン -->
+<div class="task-content col-md-11 offset-md-1" id="task-<%= task.id %>">
+
+  <!-- ステータス -->
+  <%= link_to "/change/#{task.id}", method: "post", class: "btn btn-primary", id: "state_btn-#{task.id}", data: { remote: true } do %>
+    <span><%= task.state %></span>
+  <% end%>
+
+  <!-- デッドライン -->
+  <%= task.limit %>
+
+  <!-- タスク内容 -->
+  <%= task.content %>
+
+
+  <!-- 編集・削除 -->
+  <!-- モーダルのトリガーボタン -->
   <%= link_to '編集',
                 edit_task_path(task),
                 data: { remote: true },
@@ -14,5 +24,5 @@
               method: :delete,
               data: { confirm: '削除しますか?', remote: true },
               class: "btn btn-secondary" %>
-  </p>
+
 </div>
