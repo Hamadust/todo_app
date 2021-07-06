@@ -43,9 +43,9 @@ class TasksController < ApplicationController
 
   private
 
-  # Strong Parameters はサボらずに使っておくこととします
+  # Strong Parameters
   def task_params
-    params.require(:task).permit(:state, :limit, :content)
+    params.require(:task).permit(:state, :limit, :content, :user_id)
   end
 
   def set_task

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_05_061358) do
+ActiveRecord::Schema.define(version: 2021_07_06_135355) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "content"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2021_07_05_061358) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "state"
     t.date "limit"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -29,4 +31,5 @@ ActiveRecord::Schema.define(version: 2021_07_05_061358) do
     t.string "remember_digest"
   end
 
+  add_foreign_key "tasks", "users"
 end

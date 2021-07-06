@@ -1,4 +1,8 @@
 <%= form_with model: task, local: false do |f| %>
+
+  <%# user_id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
   <!-- ステータス -->
   <div class="form-group row">
     <%= f.label :state, "State : ", class: "col-xl-5" %>
