@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  before_action :logged_in_user, only: [:destroy]
 
   def new
     if logged_in?
@@ -22,7 +21,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
-    redirect_to root_url
+    log_out if logged_in?
+    redirect_to #login_url
   end
 end
