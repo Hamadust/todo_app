@@ -1,10 +1,3 @@
-// フォームは一つしか無いので， id を使わず，タグ名から要素を取得
-// ここの変数宣言に let や const を使用すると２回目にエラーが発生します
-var form = document.getElementsByTagName('form')[0]
-// フォームを更新用フォームに置き換えます。ボタンの文字は「更新」にします。
-form.outerHTML = '<%= j(render 'form', task: @task, value: '更新') %>'
-
-
 // モーダルを開く ==================================================================
 // 「Edit」ボタンを取得
 var modalButton = document.getElementById('editButton-<%= @task.id %>');
@@ -17,6 +10,33 @@ var exampleModal = new bootstrap.Modal(document.getElementById('exampleModal'), 
 // モーダルを開く
 modalButton.addEventListener('click', function () {
     exampleModal.toggle();
-    console.log('[new_task_path Modal Open]')
+    console.log('[edit_task_path Modal Open]')
+})
+
+// フォームのレンダリング
+var form = document.getElementsByTagName('form')[0]
+// フォームを更新用フォームに置き換える。ボタンの文字は「更新」に変更
+form.outerHTML = '<%= j(render 'form', task: @task, value: '更新', state: @task.state) %>'
+// ==============================================================================
+// ステータスボタンの押下動作 =======================================================
+var stateButton = document.getElementById('state_btn')
+var state = document.getElementById('task_state')
+
+stateButton.addEventListener('click', function() {
+  switch (state.value){
+    case 'TODO':
+      stateButton.innerHTML = 'DOING'
+      state.value = 'DOING'
+      break
+    case 'DOING':
+      stateButton.innerHTML = 'DONE'
+      state.value = 'DONE'
+      break
+    case 'DONE':
+      stateButton.innerHTML = 'TODO'
+      state.value = 'TODO'
+      break
+  }
+  console.log('[CREATE TASK] State Change [' + state.value + ']')
 })
 // ==============================================================================

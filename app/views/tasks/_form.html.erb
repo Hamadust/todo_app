@@ -1,11 +1,21 @@
 <%= form_with model: task, local: false do |f| %>
   <!-- ステータス -->
   <div class="form-group row">
-      <%= f.label :state, "State : ", class: "col-xl-5" %>
-    <div class="col-xl-7">
-      <%= button_tag 'TODO', type: 'button', class: "btn btn-primary form-control", id: "state_btn" %>
-      <%= f.hidden_field :state, value: "TODO" %>
-    </div>
+    <%= f.label :state, "State : ", class: "col-xl-5" %>
+
+    <% unless value == '更新' %>
+    <%# NEWの場合 %>
+      <div class="col-xl-7">
+        <%= button_tag 'TODO', type: 'button', class: "btn btn-primary form-control", id: "state_btn" %>
+        <%= f.hidden_field :state, value: "TODO" %>
+      </div>
+    <% else %>
+    <%# EDITの場合 %>
+      <div class="col-xl-7">
+        <%= button_tag state, type: 'button', class: "btn btn-primary form-control", id: "state_btn" %>
+        <%= f.hidden_field :state, value: state %>
+      </div>
+    <% end %>
   </div>
 
   <!-- デッドライン -->

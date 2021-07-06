@@ -1,8 +1,22 @@
 // 対応するメッセージを更新
-document.getElementById('task-<%= @task.id %>').innerHTML = '<%= j(render @task) %>'
+// document.getElementById('task-<%#= @task.id %>').innerHTML = '<%#= j(render @task) %>'
+
+// メッセージの更新
+
+var state = document.getElementById('state_btn-<%= @task.id %>')
+var limit = document.getElementById('limit-<%= @task.id %>')
+var content = document.getElementById('content-<%= @task.id %>')
+
+state.innerHTML = '<%= @task.state %>'
+limit.innerHTML = '<%= @task.limit %>'
+content.innerHTML = '<%= @task.content %>'
+
+
 // フォームを新規投稿フォームに戻す
 var form = document.getElementsByTagName('form')[0]
 form.outerHTML = '<%= j(render 'form', task: Task.new, value: '投稿') %>'
+
+
 
 // モーダルを閉じる動作 ========================================
 

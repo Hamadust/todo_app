@@ -6,10 +6,10 @@
   <% end%>
 
   <!-- デッドライン -->
-  <%= task.limit %>
+  <p id="limit-<%= task.id %>"><%= task.limit %></p>
 
   <!-- タスク内容 -->
-  <%= task.content %>
+  <p id="content-<%= task.id %>"><%= task.content %></p>
 
 
   <!-- 編集・削除 -->

@@ -18,8 +18,13 @@ a, a:hover {
   width: 180px;
   display: block;
   text-align: center;
+  color: white;
 }
 
 .container {
   width: 1080px;
+}
+
+.task-content p {
+  display: inline-block;
 }
