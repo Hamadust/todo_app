@@ -30,7 +30,7 @@ class TasksController < ApplicationController
 
   # Strong Parameters はサボらずに使っておくこととします
   def task_params
-    params.require(:task).permit(:content)
+    params.require(:task).permit(:state, :limit, :content)
   end
 
   def set_task

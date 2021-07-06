@@ -1,5 +1,7 @@
 <div class="col-md-11 offset-md-1">
   <p id="task-<%= task.id %>" class="content">
+    <%= task.state %>
+    <%= task.limit %>
     <%= task.content %>
     <!-- モーダルのトリガーボタン -->
   <%= link_to '編集',
