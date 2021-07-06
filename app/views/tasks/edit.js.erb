@@ -2,12 +2,12 @@
 // ここの変数宣言に let や const を使用すると２回目にエラーが発生します
 var form = document.getElementsByTagName('form')[0]
 // フォームを更新用フォームに置き換えます。ボタンの文字は「更新」にします。
-form.outerHTML = '<%= j(render 'form', message: @message, value: '更新') %>'
+form.outerHTML = '<%= j(render 'form', task: @task, value: '更新') %>'
 
 
 // モーダルを開く ==================================================================
 // 「Edit」ボタンを取得
-var modalButton = document.getElementById('editButton-<%= @message.id %>');
+var modalButton = document.getElementById('editButton-<%= @task.id %>');
 
 // モーダルを新規に作成
 var exampleModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
@@ -17,6 +17,6 @@ var exampleModal = new bootstrap.Modal(document.getElementById('exampleModal'), 
 // モーダルを開く
 modalButton.addEventListener('click', function () {
     exampleModal.toggle();
-    console.log('[new_message_path Modal Open]')
+    console.log('[new_task_path Modal Open]')
 })
 // ==============================================================================

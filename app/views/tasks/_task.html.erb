@@ -1,0 +1,16 @@
+<div class="col-md-11 offset-md-1">
+  <p id="task-<%= task.id %>" class="content">
+    <%= task.content %>
+    <!-- モーダルのトリガーボタン -->
+  <%= link_to '編集',
+                edit_task_path(task),
+                data: { remote: true },
+                class: "btn btn-primary",
+                id: "editButton-#{task.id}" %>
+
+  <%= link_to '削除', task_path(task),
+              method: :delete,
+              data: { confirm: '削除しますか?', remote: true },
+              class: "btn btn-secondary" %>
+  </p>
+</div>

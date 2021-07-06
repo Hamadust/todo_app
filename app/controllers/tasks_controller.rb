@@ -1,9 +1,9 @@
-class MessagesController < ApplicationController
+class TasksController < ApplicationController
   # idからメッセージを取り出す操作は他でも必要となるので最初からまとめておきます
-  before_action :set_message, only: %i[destroy edit update]
+  before_action :set_task, only: %i[destroy edit update]
 
   def index
-    @messages = Message.all
+    @tasks = Task.all
   end
 
   # 新規投稿用のフォームに置き換えることだけに使用する
@@ -11,11 +11,11 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.create!(message_params)
+    @task = Task.create!(task_params)
   end
 
   def destroy
-    @message.destroy!
+    @task.destroy!
   end
 
   # 更新用のフォームに置き換えることだけに使用する
@@ -23,17 +23,17 @@ class MessagesController < ApplicationController
   end
 
   def update
-    @message.update!(message_params)
+    @task.update!(task_params)
   end
 
   private
 
   # Strong Parameters はサボらずに使っておくこととします
-  def message_params
-    params.require(:message).permit(:content)
+  def task_params
+    params.require(:task).permit(:content)
   end
 
-  def set_message
-    @message = Message.find(params[:id])
+  def set_task
+    @task = Task.find(params[:id])
   end
 end

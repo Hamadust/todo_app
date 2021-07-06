@@ -1,4 +1,4 @@
-<%= form_with model: message, local: false do |f| %>
+<%= form_with model: task, local: false do |f| %>
   <%= f.text_field :content, autocomplete: 'off' %>
 
   <div class="modal-footer">
@@ -8,7 +8,7 @@
 
 <!-- ********** 以下を追加 ********** -->
   <% if value == '更新' %>
-    <%= link_to '取消', new_message_path, data: { remote: true } %>
+    <%= link_to '取消', new_task_path, data: { remote: true } %>
   <% end %>
 <!-- ********** 以上を追加 ********** -->
 <% end %>

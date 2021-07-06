@@ -12,7 +12,7 @@ var exampleModal = new bootstrap.Modal(document.getElementById('exampleModal'), 
 // モーダルを開く
 modalButton.addEventListener('click', function () {
     exampleModal.toggle();
-    console.log('[new_message_path Modal Open]')
+    console.log('[new_task_path Modal Open]')
 })
 // ==============================================================================
 
@@ -20,4 +20,4 @@ modalButton.addEventListener('click', function () {
 // モーダル内のフォームを取得
 var form = document.getElementsByTagName('form')[0]
 // フォームのレンダリング
-form.outerHTML = '<%= j(render 'form', message: Message.new, value: '投稿') %>'
+form.outerHTML = '<%= j(render 'form', task: Task.new, value: '投稿') %>'
