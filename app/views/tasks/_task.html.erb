@@ -1,15 +1,15 @@
 <div class="task-content col-md-11 offset-md-1" id="task-<%= task.id %>">
 
   <!-- ステータス -->
-  <%= link_to "/change/#{task.id}", method: "post", class: "btn btn-primary", id: "state_btn-#{task.id}", data: { remote: true } do %>
+  <%= link_to "/change/#{task.id}", method: "post", class: "state btn btn-primary", id: "state_btn-#{task.id}", data: { remote: true } do %>
     <span><%= task.state %></span>
   <% end%>
 
   <!-- デッドライン -->
-  <p id="limit-<%= task.id %>"><%= task.limit %></p>
+  <p class="limit" id="limit-<%= task.id %>"><%= task.limit %></p>
 
   <!-- タスク内容 -->
-  <p id="content-<%= task.id %>"><%= task.content %></p>
+  <p class= "content" id="content-<%= task.id %>"><%= task.content %></p>
 
   <!-- 編集・削除 -->
   <!-- モーダルのトリガーボタン -->
