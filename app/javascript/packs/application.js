@@ -14,3 +14,4 @@ ActiveStorage.start()
 
 import "../stylesheets/application"
 import "../js/hoge.js"
+import "../js/set.js"

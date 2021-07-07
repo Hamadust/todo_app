@@ -1,5 +1,16 @@
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
+<h1 class="col-md-6 offset-md-3">ログイン</h1>
+
+<%# テキストボックスに初期値をセット %>
+
+<div class="col-md-6 offset-md-3">
+  <p>
+    サンプルユーザでログインする
+    <button class="btn btn-primary" id="sampleUserSet">値をセット</button>
+  </p>
+  <p>Email : sample-user@example.com</p>
+  <p>sample-user</p>
+</div>
 
 <%# bootstrap5に準拠した記述に直す %>
 <div class="row">
@@ -14,12 +25,12 @@
 
       <%= f.label :remember_me, class: "checkbox inline" do %>
         <%= f.check_box :remember_me %>
-        <span>Remember me on this computer</span>
+        <span>ログイン状態を保持</span>
       <% end %>
 
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
 
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    <p>ユーザー新規作成 : <%= link_to "サインアップ", signup_path %></p>
   </div>
 </div>
