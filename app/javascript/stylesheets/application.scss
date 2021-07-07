@@ -41,7 +41,9 @@ a, a:hover {
     width: 170px;
   }
   .column-task {
-    //
+    // この要素だけは左寄せする
+    width: 875px;
+    text-align: left;
   }
 }
 
