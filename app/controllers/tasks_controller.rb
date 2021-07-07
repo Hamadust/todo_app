@@ -13,6 +13,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.create!(task_params)
+    flash[:success] = 'タスクを追加しました'
     redirect_to root_url
   end
 

@@ -11,7 +11,9 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+require('jquery')
 
 import "../stylesheets/application"
 import "../js/hoge.js"
 import "../js/set.js"
+import "../js/flash.js"
