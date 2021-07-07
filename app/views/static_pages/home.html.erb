@@ -1,5 +1,4 @@
-<% if logged_in? %>
-  <%= render 'tasks/index' %>
-<% else %>
-  <%= render 'shared/not_logged_in_home' %>
-<% end %>
+<%# ログインしていない場合のトップページ %>
+<h1>TODO-APP</h1>
+
+<%= link_to 'ログインする', login_path, class: "btn btn-primary" %>
