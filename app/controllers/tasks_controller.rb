@@ -5,6 +5,8 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.where(user_id: current_user.id)
+    # エラーメッセージ用
+    @task = Task.new
   end
 
   # 新規投稿用のフォームに置き換えることだけに使用する
@@ -12,9 +14,15 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.create!(task_params)
-    flash[:success] = 'タスクを追加しました'
-    redirect_to root_url
+    @task = Task.new(task_params)
+    if @task.valid?
+      @task.save
+      flash[:success] = 'タスクを追加しました'
+      redirect_to root_url
+    else
+      flash[:danger] = '投稿失敗'
+      redirect_to root_url
+    end
   end
 
   def destroy
