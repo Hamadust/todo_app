@@ -21,50 +21,47 @@ a, a:hover {
   color: white;
 }
 
-.container {
-  width: 1080px;
-}
+// .container {
+//   // width: 1080px;
+// }
 
 // タスクのカラム
 .task-column {
-  width: 1300px;
-  border-bottom: dotted 1px black;
   p {
     display: inline-block;
     text-align: center;
     font-size: 20px;
   }
-  .column-state {
-    width: 120px;
-  }
-  .column-limit {
-    width: 170px;
-  }
-  .column-task {
-    // この要素だけは左寄せする
-    width: 875px;
-    text-align: left;
-  }
 }
 
 // タスクのレイアウト
 .task-content {
-  width: 1300px;
+  // width: 1300px;
   height: 60px;
-  border-bottom: dotted 1px black;
+  // border-bottom: dotted 1px black;
   line-height: 60px;
   p {
     display: inline-block;
   }
-  .state {
-    width: 120px;
-  }
+  // .state {
+  //   // width: 120px;
+  //   // border: solid 1px black;
+  // }
   .limit {
-    width: 170px;
+    // width: 170px;
+    // border: solid 1px black;
     font-size: 18px;
     text-align: center;
   }
-  .content {
-    width: 875px;
+  // .content {
+  //   // border: solid 1px black;
+  //   // width: 875px;
+  // }
+  .btn-area{
+    // margin
+    // border: solid 1px black;
+    color: white;
+    display: inline-block;
+    text-align: right;
   }
 }
