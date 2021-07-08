@@ -24,6 +24,19 @@ a, a:hover {
 // .container {
 //   // width: 1080px;
 // }
+header {
+  height: 50px;
+}
+
+// flashメッセージ
+#flash {
+  margin-top: 50px;
+}
+
+// 見出し
+.title {
+  margin-top: 50px;
+}
 
 // タスクのカラム
 .task-column {
@@ -62,6 +75,15 @@ a, a:hover {
     // border: solid 1px black;
     color: white;
     display: inline-block;
+    text-align: right;
+  }
+}
+
+// フッターのレイアウト
+footer{
+  height: 50px;
+  p {
+    color: white;
     text-align: right;
   }
 }

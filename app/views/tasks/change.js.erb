@@ -1,2 +1,24 @@
-document.getElementById('state_btn-<%= @task.id %>').innerHTML = '<%= j(@task.state) %>'
-console.log('[state-change <%= @task.state %>]')
+// ステータスボタンの要素を取得
+var stateButton = document.getElementById('state_btn-<%= @task.id %>')
+console.log('<%= @task.state %>')
+
+// ステータスボタンの文字を切り替える
+stateButton.innerHTML = '<%= j(@task.state) %>'
+
+// ステータスボタンの色を切り替える（要Bootstrap。クラスの付け替え）
+switch (stateButton.innerHTML){
+    case 'TODO':
+      stateButton.classList.remove('btn-secondary')
+      stateButton.classList.add('btn-success')
+      break
+    case 'DOING':
+      stateButton.classList.remove('btn-success')
+      stateButton.classList.add('btn-warning')
+      break
+    case 'DONE':
+      stateButton.classList.remove('btn-warning')
+      stateButton.classList.add('btn-secondary')
+      break
+  }
+
+// console.log('[state-change <%#= @task.state %>]')

@@ -1,7 +1,16 @@
 <div class="task-content col-md-10 offset-md-1" id="task-<%= task.id %>">
 
+<%# ステータスボタンに付与するクラスの取得 %>
+  <% if task.state == 'TODO' %>
+    <% state_class = 'btn-success' %>
+  <% elsif task.state == 'DOING' %>
+    <% state_class = 'btn-warning' %>
+  <% elsif task.state == 'DONE' %>
+    <% state_class = 'btn-secondary' %>
+  <% end %>
+
   <!-- ステータス -->
-  <%= link_to "/change/#{task.id}", method: "post", class: "state btn btn-primary col-md-1", id: "state_btn-#{task.id}", data: { remote: true } do %>
+  <%= link_to "/change/#{task.id}", method: "post", class: "state col-md-1 btn #{state_class}", id: "state_btn-#{task.id}", data: { remote: true } do %>
     <span><%= task.state %></span>
   <% end%>
 
@@ -17,7 +26,7 @@
   <%= link_to '編集',
                 edit_task_path(task),
                 data: { remote: true },
-                class: "btn btn-primary",
+                class: "btn btn-info",
                 id: "editButton-#{task.id}",
                 "data-bs-toggle" => "modal",
                 "data-bs-target" => "#exampleModal" %>
@@ -25,6 +34,6 @@
   <%= link_to '削除', task_path(task),
               method: :delete,
               data: { confirm: '削除しますか?', remote: true },
-              class: "btn btn-secondary" %>
+              class: "btn btn-danger" %>
   </div>
 </div>
