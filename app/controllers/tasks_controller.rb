@@ -15,13 +15,12 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    if @task.valid?
-      @task.save
+    if @task.save
       flash[:success] = 'タスクを追加しました'
-      redirect_to root_url
+      redirect_to index_url
     else
-      flash[:danger] = '投稿失敗'
-      redirect_to root_url
+      flash[:danger] = "投稿失敗"
+      # flash[:danger] = @task.errors.full_messages
     end
   end
 

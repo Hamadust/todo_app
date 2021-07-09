@@ -80,10 +80,22 @@ header {
 }
 
 // フッターのレイアウト
+.footer-height {
+  margin-top: 50px;
+}
 footer{
   height: 50px;
   p {
     color: white;
     text-align: right;
   }
+}
+
+
+// フォーム
+
+// エラーメッセージ
+#errorField {
+  color: red;
+  font-weight: bold;
 }

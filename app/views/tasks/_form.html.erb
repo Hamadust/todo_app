@@ -1,9 +1,10 @@
 <%= form_with model: task, local: true do |f| %>
+  <div id="errorField"></div>
 
   <%# user_id %>
   <%= f.hidden_field :user_id, value: current_user.id %>
 
-  <!-- ステータス -->
+  <%# ステータス %>
   <div class="form-group row">
     <%= f.label :state, "State : ", class: "col-xl-5" %>
 
@@ -22,20 +23,21 @@
     <% end %>
   </div>
 
-  <!-- デッドライン -->
+  <%# デッドライン %>
   <div class="form-group row">
     <%= f.label :limit, "Limit : ", class: "col-sm-4" %>
     <%= f.date_field :limit, class: "col-sm-8 form-control", value: Date.current.strftime() %>
   </div>
 
-  <!-- コンテンツ -->
+  <%# コンテンツ %>
   <div class="form-group row">
     <%= f.label :content, "Task :" %>
     <%= f.text_field :content, autocomplete: 'off' %>
   </div>
 
+  <%# ボタン %>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    <%= f.submit value, class: "btn btn-primary", id: "submitButton" %>
+    <%= button_tag value, type: 'button', class: "btn btn-primary", id: "submitButton" %>
   </div>
 <% end %>
