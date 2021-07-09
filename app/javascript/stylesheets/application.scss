@@ -81,7 +81,9 @@ header {
 
 // フッターのレイアウト
 .footer-height {
+  position: absolute;
   margin-top: 50px;
+  bottom: 0;
 }
 footer{
   height: 50px;
@@ -90,7 +92,6 @@ footer{
     text-align: right;
   }
 }
-
 
 // フォーム
 

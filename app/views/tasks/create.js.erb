@@ -2,27 +2,3 @@
 document.getElementById('tasks').insertAdjacentHTML('beforeend', '<%= j(render @task) %>')
 // フォームのインプットを空にする
 document.getElementById('task_content').value = ''
-
-console.log('[POST]')
-
-// モーダルを閉じる動作 ========================================
-
-// モーダルを取得
-var modal = document.getElementById('exampleModal')
-// モーダルを表示させているクラスを削除
-modal.classList.remove('fade')
-modal.classList.remove('show')
-// モーダルのdisplayを'none'にする
-modal.style.display = 'none'
-
-// 背景の透過した黒いレイヤーを取得・削除
-var backdrop = document.getElementsByClassName('modal-backdrop')[0]
-backdrop.remove()
-
-// bodyタグの'modal-open'クラスを削除
-var body = document.getElementsByTagName('body')[0]
-body.classList.remove('modal-open')
-
-// =========================================================
-
-console.log('[TASK CREATE Modal Close]')

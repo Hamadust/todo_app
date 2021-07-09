@@ -4,9 +4,6 @@ var form = document.getElementsByTagName('form')[0]
 // フォームのレンダリング
 form.outerHTML = '<%= j(render 'form', task: Task.new, value: '投稿') %>'
 
-// Railsのform_withではname属性を付けられないので、ここで追加している
-form.setAttribute("name", "myForm")
-
 // ステータスボタンの押下動作 =======================================================
 var stateButton = document.getElementById('state_btn')
 var state = document.getElementById('task_state')
@@ -42,8 +39,7 @@ submitButton.addEventListener('click', function () {
     errorField.innerHTML = 'タスクは1文字以上、50文字以内で入力してください';
     task_content.style.border = 'solid 2px red';
   } else {
-    // console.log('[POST CREATE TASK]');
+    console.log('[POST CREATE TASK]');
     this.form.submit();
-    // document.myForm.submit();
   }
 })
