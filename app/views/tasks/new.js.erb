@@ -1,6 +1,9 @@
 
 // モーダル内のフォームを取得
 var form = document.getElementsByTagName('form')[0]
+// モーダルタイトル取得・変更
+var modalTitle = document.getElementById('modalLabel')
+modalTitle.innerHTML = '新規タスクを作成'
 // フォームのレンダリング
 form.outerHTML = '<%= j(render 'form', task: Task.new, value: '投稿') %>'
 
@@ -33,7 +36,7 @@ stateButton.addEventListener('click', function() {
 })
 // ==============================================================================
 
-// クライアント側でのバリデーション処理
+// クライアント側でのバリデーション処理 ===============================================
 var submitButton = document.getElementById('submitButton');
 
 submitButton.addEventListener('click', function () {
@@ -49,3 +52,4 @@ submitButton.addEventListener('click', function () {
     this.form.submit();
   }
 })
+// ==============================================================================

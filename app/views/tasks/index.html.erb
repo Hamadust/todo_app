@@ -1,4 +1,4 @@
-<!-- モーダルのトリガーボタン -->
+<%# モーダルのトリガーボタン %>
 <h1 class="title"><%= current_user.name %> の タスク</h1>
 <div class="col-md-2 offset-md-5">
   <%= link_to 'NEW TASK CREATE',
@@ -7,7 +7,7 @@
                 class: "btn btn-primary",
                 id: "modalButton",
                 "data-bs-toggle" => "modal",
-                "data-bs-target" => "#exampleModal" %>
+                "data-bs-target" => "#modal" %>
 </div>
 
 <%= render 'modal' %>

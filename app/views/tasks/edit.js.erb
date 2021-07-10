@@ -1,23 +1,11 @@
-// モーダルを開く ==================================================================
-// 「Edit」ボタンを取得
-var modalButton = document.getElementById('editButton-<%= @task.id %>');
-
-// モーダルを新規に作成
-var exampleModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
-    keyboard: false
-})
-
-// // モーダルを開く
-// modalButton.addEventListener('click', function () {
-//     exampleModal.toggle();
-//     console.log('[edit_task_path Modal Open]')
-// })
-
 // フォームのレンダリング
 var form = document.getElementsByTagName('form')[0]
+// モーダルタイトル取得・変更
+var modalTitle = document.getElementById('modalLabel')
+modalTitle.innerHTML = 'タスクの編集'
 // フォームを更新用フォームに置き換える。ボタンの文字は「更新」に変更
 form.outerHTML = '<%= j(render 'form', task: @task, value: '更新', state: @task.state) %>'
-// ==============================================================================
+
 // ステータスボタンの押下動作 =======================================================
 var stateButton = document.getElementById('state_btn')
 var state = document.getElementById('task_state')
@@ -44,5 +32,23 @@ stateButton.addEventListener('click', function() {
       break
   }
   console.log('[CREATE TASK] State Change [' + state.value + ']')
+})
+// ==============================================================================
+
+// クライアント側でのバリデーション処理 ===============================================
+var submitButton = document.getElementById('submitButton');
+
+submitButton.addEventListener('click', function () {
+  var task_content = document.getElementById('task_content');
+  var errorField = document.getElementById('errorField');
+  // contentのチェック
+  if (task_content.value.length == 0 || task_content.value.length >= 51) {
+    console.log('[CONTENT INVALID]');
+    errorField.innerHTML = 'タスクは1文字以上、50文字以内で入力してください';
+    task_content.style.border = 'solid 2px red';
+  } else {
+    console.log('[POST CREATE TASK]');
+    this.form.submit();
+  }
 })
 // ==============================================================================

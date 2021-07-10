@@ -5,11 +5,8 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.where(user_id: current_user.id)
-    # エラーメッセージ用
-    @task = Task.new
   end
 
-  # 新規投稿用のフォームに置き換えることだけに使用する
   def new
   end
 
@@ -28,7 +25,6 @@ class TasksController < ApplicationController
     @task.destroy!
   end
 
-  # 更新用のフォームに置き換えることだけに使用する
   def edit
     state = @task.state
     if state == 'TODO'
