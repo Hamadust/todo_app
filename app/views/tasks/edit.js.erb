@@ -27,14 +27,20 @@ stateButton.addEventListener('click', function() {
     case 'TODO':
       stateButton.innerHTML = 'DOING'
       state.value = 'DOING'
+      stateButton.classList.remove('btn-success')
+      stateButton.classList.add('btn-warning')
       break
     case 'DOING':
       stateButton.innerHTML = 'DONE'
       state.value = 'DONE'
+      stateButton.classList.remove('btn-warning')
+      stateButton.classList.add('btn-secondary')
       break
     case 'DONE':
       stateButton.innerHTML = 'TODO'
       state.value = 'TODO'
+      stateButton.classList.remove('btn-secondary')
+      stateButton.classList.add('btn-success')
       break
   }
   console.log('[CREATE TASK] State Change [' + state.value + ']')

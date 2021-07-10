@@ -30,6 +30,14 @@ class TasksController < ApplicationController
 
   # 更新用のフォームに置き換えることだけに使用する
   def edit
+    state = @task.state
+    if state == 'TODO'
+      state = 'DOING'
+    elsif state == 'DOING'
+      state = 'DONE'
+    elsif state == 'DONE'
+      state = 'TODO'
+    end
   end
 
   def update
