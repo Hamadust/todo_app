@@ -1,24 +1,34 @@
-# README
+# Ruby on Rails で作成したサンプルアプリケーション
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+以下の環境で作成したサンプルアプリケーションです。
 
-Things you may want to cover:
+- macOS BigSur 11.4
+- Ruby         3.0.1
+- Rails        6.1.4
+- Bootstrap    5.0.0-beta3
 
-* Ruby version
+## 使い方
 
-* System dependencies
+### ログイン
+- ログインフォームの上部にボタンをクリックすることでログインフォームに値がセットされ、そのままログインが可能です。
+  (ユーザの新規作成も可能です。存在しない適当なメールアドレスとパスワードを入力してください。　なお、メールアドレスは正規表現によるバリデーションを行なっております)
 
-* Configuration
+### タスクの作成
+- 「CREATE NEW TASK」と記載されたボタンをクリックするとモーダルウィンドウが開きます。
 
-* Database creation
+- ---モーダルウィンドウ内の入力フォームについて---
+- State - タスクの状態を表します。 状態は3段階に分けることができます。　TODO(予定)・DOING(進行中)・DONE(完了)　ボタンクリックで状態を変更できます。
+- Limit - タスクの期限を表します。
+- Task  - タスクの内容を書き込みます。 最大50文字まで入力できます。
 
-* Database initialization
+### タスクの編集
+- 「編集」ボタンをクリックすることにより編集用のモーダルウィンドウが開きます。
+- カラム内にあるStateボタンをクリックするだけで状態を変更することができます。
 
-* How to run the test suite
+### タスクの削除
+- 追加されたタスクのカラム内にある「削除」ボタンをクリックすることにより確認ダイアログを経て削除することができます。
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### ユーザーページ
+- ユーザー情報の確認
+- ユーザー情報の変更（初期ユーザーの変更はできません）
+- アカウントの削除（初期ユーザーの削除はできません）
