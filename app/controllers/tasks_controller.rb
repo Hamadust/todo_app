@@ -16,8 +16,7 @@ class TasksController < ApplicationController
       flash[:success] = 'タスクを追加しました'
       redirect_to index_url
     else
-      flash[:danger] = "投稿失敗"
-      # flash[:danger] = @task.errors.full_messages
+      # flash[:danger] = "投稿失敗"
     end
   end
 
@@ -57,12 +56,12 @@ class TasksController < ApplicationController
 
   private
 
-  # Strong Parameters
-  def task_params
-    params.require(:task).permit(:state, :limit, :content, :user_id)
-  end
+    # Strong Parameters
+    def task_params
+      params.require(:task).permit(:state, :limit, :content, :user_id)
+    end
 
-  def set_task
-    @task = Task.find(params[:id])
-  end
+    def set_task
+      @task = Task.find(params[:id])
+    end
 end

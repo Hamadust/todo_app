@@ -1,3 +1,4 @@
+<% provide(:title, 'ユーザー情報') %>
 <div class="col-md-5 offset-md-4">
   <p>
     ユーザー名:<%= @user.name %>
@@ -7,12 +8,12 @@
   </p>
   <% unless @user.id == 1 %>
     <%= link_to 'アカウントの編集', edit_user_path(@user), class: "btn btn-warning" %>
-    <%= link_to 'アカウントの削除', '#', method: :delete, class: "btn btn-danger", data: { confirm: '削除しますか?' } %>
+    <%= link_to 'アカウントの削除', '#', method: :delete, class: "btn btn-danger", data: { confirm: 'アカウントを削除しますか?' } %>
   <% else %>
     <p>
       ※ このアカウントの編集・削除はできません。
     </p>
     <%= link_to 'アカウントの編集', edit_user_path(@user), class: "btn btn-warning disabled" %>
-    <%= link_to 'アカウントの削除', '#', method: :delete, class: "btn btn-danger disabled", data: { confirm: '削除しますか?' } %>
+    <%= link_to 'アカウントの削除', '#', method: :delete, class: "btn btn-danger disabled", data: { confirm: 'アカウントを削除しますか?' } %>
   <% end %>
 </div>

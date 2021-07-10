@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_06_135355) do
+ActiveRecord::Schema.define(version: 2021_07_10_160155) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "content"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_07_06_135355) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
     t.string "remember_digest"
+    t.boolean "admin", default: false
   end
 
   add_foreign_key "tasks", "users"
