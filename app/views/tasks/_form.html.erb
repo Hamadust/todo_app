@@ -11,7 +11,7 @@
     <% unless value == '更新' %>
     <%# NEWの場合 %>
       <div class="col-xl-7">
-        <%= button_tag 'TODO', type: 'button', class: "btn btn-primary form-control", id: "state_btn" %>
+        <%= button_tag 'TODO', type: 'button', class: "btn btn-success form-control", id: "state_btn" %>
         <%= f.hidden_field :state, value: "TODO" %>
       </div>
     <% else %>
@@ -26,7 +26,7 @@
   <%# デッドライン %>
   <div class="form-group row">
     <%= f.label :limit, "Limit : ", class: "col-sm-4" %>
-    <%= f.date_field :limit, class: "col-sm-8 form-control", value: Date.current.strftime() %>
+    <%= f.date_field :limit, class: "col-sm-3 form-control", value: Date.current.strftime() %>
   </div>
 
   <%# コンテンツ %>
